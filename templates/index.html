@@ -1,0 +1,146 @@
+{% extends "base.html" %}  
+<!-- Page Head -->
+{% block content %}
+<h2>市场总览</h2>
+<p id="page-intro">显示最新的（前一天）的所有统计信息</p>
+			
+<div class="clear"></div> <!-- End .clear -->
+
+<div class="content-box"><!-- Start Content Box -->
+	
+	<div class="content-box-header">
+		
+		<h3>品牌总览（{{date|date:"Y-m-d"}}）</h3>
+		
+		<ul class="content-box-tabs">
+			<li><a href="#tab1" class="default-tab">家具行业</a></li> <!-- href must be unique and match the id of target div -->
+		</ul>
+		
+		<div class="clear"></div>
+		
+	</div> <!-- End .content-box-header -->
+	
+	<div class="content-box-content">
+		
+		<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+			<!--
+			<div class="notification attention png_bg">
+				<a href="#" class="close"><img src="{{ STATIC_URL }}images/icons/cross_grey_small.png" title="Close this notification" alt="close" /></a>
+				<div>
+					有什么需要提示的吗，放在这里；
+				</div>
+			</div>
+			-->
+			<table>
+				
+				<thead>
+					<tr>
+					   <th>品牌</th>
+					   <th>排名(谷/百)</th>
+					   <th>热度(谷/百)</th>
+					   <th>微博影响力(粉/关/博)</th>
+					   <th>博客影响力(等/粉/分/pv)</th>
+					   <th>正/负面新闻</th>
+					   <th>网站排名</th>
+					</tr>
+					
+				</thead>
+			 
+				
+			 
+				<tbody>
+				 {% for brand in brands %}
+					<tr>
+						<td><a href="{{ brand.site_url }}" target="_blank" title="title">{{ brand.brand_name}}</a></td>
+						<td>{% for rank in brand.ranks %} {{rank.keyword}}({{rank.google_rank}}/{{rank.baidu_rank}})</br>{% endfor %}</td>
+						<td>{% for hot in brand.hots %} {{hot.keyword}}({{hot.google_hot}}/{{hot.baidu_hot}})</br>{% endfor %}</td>
+						<td>{% for mblog in brand.mblog_s %} <a href="{{ blog.url }}" target="_blank" title="title">{{mblog.type}}</a>({{mblog.followers}}/{{mblog.friends}}/{{mblog.statuses}})</br>{% endfor %}</td>
+						<td>{% for blog in brand.blog_s %} <a href="{{ blog.url }}" target="_blank" title="title">{{blog.type}}</a>({{blog.grade}}/{{blog.fans}}/{{blog.score}}/{{blog.pv}})</br>{% endfor %}</td>
+						<td>20/10</td>
+						<td>{{ brand.site_rank }}</td>
+					</tr>
+					
+				 {% endfor %}
+				</tbody>
+				
+			</table>
+			
+		</div> <!-- End #tab1 -->
+	</div> <!-- End .content-box-content -->
+	
+</div> <!-- End .content-box -->
+			
+
+<!--新的表格开始-->
+
+<div class="clear"></div> <!-- End .clear -->
+
+<div class="content-box" id="store"><!-- Start Content Box -->
+	
+	<div class="content-box-header">
+		
+		<h3>店铺总览（{{date|date:"Y-m-d"}}）</h3>
+		
+		<ul class="content-box-tabs">
+		 {% for brand in brands%}
+			<li><a href="#tab2_{{brand.id}}" {% if forloop.first %}class="default-tab"{% endif %}>{{brand.brand_name}}</a></li>
+		 {% endfor %}
+		</ul>
+		
+		<div class="clear"></div>
+		
+	</div> <!-- End .content-box-header -->
+	
+	<div class="content-box-content">
+		{% for brand in brands%}
+		<div {% if forloop.first %}class="tab-content default-tab"{% else %}class="tab-content"{% endif %} id="tab2_{{brand.id}}"> <!-- This is the target div. id must match the href of this div's tab -->
+			
+			
+			
+			<table>
+				
+				<thead>
+					<tr>
+					   
+					   <th>店铺</th>
+					   <th>产品数量</th>
+					   <th>总访问量</th>
+					   <th>累计销量</th>
+					   <th>月销量</th>
+					   <th>累计销售额/元</th>
+					   <th>月销售额/元</th>
+					   <th>转化率%</th>
+					   <th>评价(产品/发货/服务)</th>
+					</tr>
+					
+				</thead>
+			 
+				
+			 
+				<tbody>
+				 {% for store in brand.store_s %}
+					<tr>
+						<td><a href="{{store.url}}" target="_blank" title="title">{{store.name}}</a></td>
+						<td>{{store.product_num}}</td>
+						<td>120980</td>
+						<td>{{store.total}}</td>
+						<td>{{store.month}}</td>
+						<td>0</td>
+						<td>0</td>
+						<td>10%</td>
+						<td>{{store.descrip}}/{{store.speed}}/{{store.service}}</td>
+					</tr>
+				 {% endfor %}
+				
+				</tbody>
+				
+			</table>
+			
+		</div> <!-- End #tab2_taobao -->
+		
+		{% endfor %}
+
+	</div> <!-- End .content-box-content -->
+	
+</div> <!-- End .content-box -->
+{% endblock %}

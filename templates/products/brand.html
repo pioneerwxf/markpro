@@ -1,0 +1,110 @@
+{% extends "base.html" %} 
+{% block headjs %}
+<script language="javascript">
+	function check() {
+	        if(document.select1.begin_date.value == "") {
+	            alert("请输入开始日期如20120405");
+	            document.select1.begin_date.focus();
+	            return false;
+	        }
+			if(document.select1.end_date.value == "") {
+	            alert("请输入结束日期如20120405");
+	            document.select1.end_date.focus();
+	            return false;
+	        }
+		return true;
+	}
+</script>
+{% endblock %}
+ 
+{% block content %}
+<!-- Page Head -->
+			<h2>产品监测-按品牌索引</h2>
+			<p id="page-intro">显示某一天或一段时间某个品牌所有产品的信息</p>
+			<div class="clear"></div> <!-- End .clear -->
+			
+			<div class="content-box"><!-- Start Content Box -->
+			
+				<div class="content-box-header">
+					
+					<h3>产品总览[{{start|date:"Y-m-d"}}{% if start != end %} ~ {{end|date:"Y-m-d"}}{%endif%}]</h3>
+					<ul class="content-box-tabs">
+						{% for store in stores %}
+						<li><a href="#tab{{ forloop.counter }}" {% if forloop.first %}class="default-tab"{% endif %}>{{ store.name}}</a></li> <!-- href must be unique and match the id of target div -->
+						{% endfor %}
+					</ul>
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					{% for store in stores %}
+					<div {% if forloop.first %}class="tab-content default-tab"{% else %}class="tab-content"{% endif %} id="tab{{ forloop.counter }}"> <!-- This is the target div. id must match the href of this div's tab -->
+						
+						<table>
+							
+							<thead>
+								<tr>
+									<td colspan="10">
+										<div class="bulk-actions align-left">
+											<form method = "post" id ="select{{ forloop.counter }}" name="select{{ forloop.counter }}" action="#" {% ifequal forloop.counter 1 %} onsubmit="return check();" {% endifequal %}>
+											 {% csrf_token %}
+											时间段:
+											<input class="text-input" style="width:100px;" value="" type="text" id="small-input" name="begin_date" />-
+											<input class="text-input" style="width:100px;" value=""type="text" id="small-input" name="end_date" />
+											<input class="button" type="submit" value="选择" />
+											</form>
+										</div>
+										<div style="float:right;">
+										 <a class="button" href="/media/download/products_by_brand.xls">导出当前数据</a>
+										</div>
+										<div class="clear"></div>
+									</td>
+								</tr>
+								<tr>
+								   
+								   <th>产品</th>
+								   <th>总访问量</th>
+								   <th><a href="?order=sold_total&revs={{ revs }}" title="按累计销量排序">累计销量</a></th>
+								   <th><a href="?order=sold_month&revs={{ revs }}" title="按月销量排序">月销量</a></th>
+								   <th>累计销售额/元</th>
+								   <th>月销售额/元</th>
+								   <th>转化率%</th>
+								   <th><a href="?order=review&revs={{ revs }}" title="按评价排序">评价</th>
+								</tr>
+								
+							</thead>
+						 
+							<tfoot>
+								<tr>
+									<td colspan="10">
+										<div class="clear"></div>
+									</td>
+								</tr>
+							</tfoot>
+							
+						 
+							<tbody>
+								{% for product in store.product_s %}
+								<tr>
+									<td><a href="{{product.url}}" target="_blank">{{product.name}}</a></td>
+									<td>120980</td>
+									<td>{{product.sold_total}}</td>
+									<td>{{product.sold_month}}</td>
+									<td>25000</td>
+									<td>3200</td>
+									<td>10%</td>
+									<td>{{product.review}}</td>
+								</tr>
+								{% endfor %}
+								
+							</tbody>
+							
+						</table>
+						
+					</div> <!-- End #tab1 -->
+					{% endfor %}
+				</div> <!-- End .content-box-content -->
+				
+			</div> <!-- End .content-box -->
+{% endblock %}

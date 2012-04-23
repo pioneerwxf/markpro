@@ -1,0 +1,100 @@
+{% extends "base.html" %}  
+<!-- Page Head -->
+{% block headjs %}
+<script language="javascript">
+	function check() {
+	        if(document.select.begin_date.value == "") {
+	            alert("请输入开始日期如20120405");
+	            document.select.begin_date.focus();
+	            return false;
+	        }
+			if(document.select.end_date.value == "") {
+	            alert("请输入结束日期如20120405");
+	            document.select.end_date.focus();
+	            return false;
+	        }
+		return true;
+	}
+</script>
+{% endblock %}
+
+{% block content %}
+	    <h2>品牌监测-按品牌索引</h2>
+			<p id="page-intro">显示所有品牌某一天的统计信息</p>
+						
+			<div class="clear"></div> <!-- End .clear -->
+			
+			<div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+					<h3>品牌数据[{{start|date:"Y-m-d"}}{% if start != end %} ~ {{end|date:"Y-m-d"}}{%endif%}]</h3>
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+						
+						
+						<table>
+							
+							<thead>
+								<tr>
+									<td colspan="10">
+										<div class="bulk-actions align-left">
+											<form method = "post" name="select" action="#" onsubmit="return check();">
+											 {% csrf_token %}
+											时间段:
+											<input class="text-input" style="width:100px;" value="" type="text" id="small-input" name="begin_date" />-
+											<input class="text-input" style="width:100px;" type="text" id="small-input" name="end_date" />
+											<input class="button" type="submit" value="选择" />
+											</form>
+										</div>
+										<div class="clear"></div>
+									</td>
+								</tr>
+								<tr>
+								   <th>品牌</th>
+								   <th>排名(谷/百)</th>
+								   <th>热度(谷/百)</th>
+								   <th>微博(粉/关/博)</th>
+								   <th>博客(等/粉/分/pv)</th>
+								   <th>网站排名</th>
+								</tr>
+								
+							</thead>
+							
+							<tfoot>
+								<tr>
+									<td colspan="10">
+										<div class="clear"></div>
+									</td>
+								</tr>
+							</tfoot>
+						 
+							
+						 
+							<tbody>
+								{% for brand in brands %}
+								  <tr>
+									  <td><a href="{{ brand.site_url }}" target="_blank" title="title">{{ brand.brand_name}}</a></td>
+									  <td>{% for rank in brand.ranks %} {{rank.rankkey.keyword}}({{rank.result.google_rank}}/{{rank.result.baidu_rank}})</br>{% endfor %}</td>
+									  <td>{% for hot in brand.hots %} {{hot.hotkey.keyword}}({{hot.result.google_hot}}/{{hot.result.baidu_hot}})</br>{% endfor %}</td>
+									  <td>{% for mblog in brand.mblog_s %} {{mblog.mblog.type}}({{mblog.result.followers}}/{{mblog.result.friends}}/{{mblog.result.statuses}})</br>{% endfor %}</td>
+									  <td>{% for blog in brand.blog_s %} <a href="{{ blog.blog.url }}" target="_blank" title="title">{{blog.blog.type}}</a>({{blog.result.grade}}/{{blog.result.fans}}/{{blog.result.score}}/{{blog.result.pv}})</br>{% endfor %}</td>
+									  <td>{{ brand.rank }}</td>
+								  </tr>
+								  
+							        {% endfor %}
+							</tbody>
+							
+						</table>
+						
+					</div> <!-- End #tab1 -->
+				</div> <!-- End .content-box-content -->
+				
+			</div> <!-- End .content-box -->
+						
+{% endblock %}

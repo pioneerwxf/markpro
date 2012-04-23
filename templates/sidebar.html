@@ -1,0 +1,51 @@
+		<div id="sidebar">
+		    <div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
+			
+			<h1 id="sidebar-title"><a href="#">MarketPro 管理后台</a></h1>
+		  
+			<!-- Logo (221px wide) -->
+			<a href="#"><img id="logo" src="{{ STATIC_URL }}images/logo.png" alt="MarketPro 管理后台" /></a>
+		  
+			<!-- Sidebar Profile links -->
+			<div id="profile-links">
+				您好, <a href="#" title="Edit your profile">用户名</a>| <a href="#" title="Sign Out">登出</a>
+			</div>        
+			
+			<ul id="main-nav">  <!-- Accordion Menu -->
+				
+				<li> 
+					<a href="#" class="nav-top-item {% if current == 'index' %}current{% endif %}"> <!-- Add the class "current" to current menu item -->
+					市场总览
+					</a>
+					<ul>
+						<li><a class="{% if child == 'all_brand' %}current{% endif %}"href="/">今日汇总</a></li>
+						
+					</ul>
+				</li>
+				
+				<li>
+					<a href="#" class="nav-top-item {% if current == 'brand' %}current{% endif %}"> 
+						品牌概况
+					</a>
+					<ul>
+						<li><a {% if child == 'brand' %} class="current" {% endif %} href="/brands/brand">按品牌索引</a></li>
+						<li><a {% if child == 'date' %} class="current" {% endif %} href="/brands/date">按日期索引</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="nav-top-item {% if current == 'product' %}current{% endif %}"> 
+						产品概况
+					</a>
+					<ul>
+						<li><a {% if child == 'brand' %} class="current" {% endif %} href="/products/brand">按品牌索引</a></li>
+						<li><a {% if child == 'date' %} class="current" {% endif %} href="/products/date">按日期索引</a></li>
+					</ul>
+				</li>
+				
+		       				
+			</ul> <!-- End #main-nav -->
+			
+			
+		</div></div> <!-- End #sidebar -->
+		
+		

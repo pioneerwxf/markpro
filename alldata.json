@@ -1,0 +1,198 @@
+[
+    {
+        "brand_name" : "雅兰",
+        "site_url" : "http://www.airland.com/",
+        "rank_keys" : [ "床垫", "家具", "家居" ],
+        "hot_keys" : [ "雅兰", "雅兰床垫", "雅兰床上用品" ],
+        "blogs" : [
+            { "type" : "sina", "url" : "http://blog.sina.com.cn/airlandchina" }
+        ],
+        "mblogs" : [
+            { "type" : "sina", "uid" : "1789081762" },
+            { "type" : "tqq", "uid" : "luckly808" }
+        ],
+        "stores" : [
+            {
+                "name" : "雅兰新雅专卖店",
+                "type" : "tmall",
+                "url" : "http://airlandxy.tmall.com/",
+                "products" : [
+                    { "name" : "之宝150", "url" : "http://detail.tmall.com/item.htm?id=9222771613"},
+                    { "name" : "之宝200", "url" : "http://detail.tmall.com/item.htm?id=9222794179"},
+                    { "name" : "之宝280", "url" : "http://detail.tmall.com/item.htm?id=9222630147"},
+                    { "name" : "之宝350", "url" : "http://detail.tmall.com/item.htm?id=9222748557"},
+                    { "name" : "宝姿", "url" : "http://detail.tmall.com/item.htm?id=9222232871"},
+                    { "name" : "宝健", "url" : "http://detail.tmall.com/item.htm?id=9223159393"},
+                    { "name" : "公爵", "url" : "http://detail.tmall.com/item.htm?id=10643590951"},
+                    { "name" : "宝迪", "url" : "http://detail.tmall.com/item.htm?id=9222754485"},
+                    { "name" : "宝典", "url" : "http://detail.tmall.com/item.htm?id=9223085895"},
+                    { "name" : "宝诗", "url" : "http://detail.tmall.com/item.htm?id=9223079481"},
+                    { "name" : "宝丽", "url" : "http://detail.tmall.com/item.htm?id=9222418253"},
+                    { "name" : "之梦", "url" : "http://detail.tmall.com/item.htm?id=12220424952"},
+                    { "name" : "之宝", "url" : "http://detail.tmall.com/item.htm?id=10902829581"},
+                    { "name" : "之星", "url" : "http://detail.tmall.com/item.htm?id=14875564537"},
+                    { "name" : "BOY", "url" : "http://detail.tmall.com/item.htm?id=9231777329"},
+                    { "name" : "爱创新", "url" : "http://detail.tmall.com/item.htm?id=10761014587"},
+                    { "name" : "爱天真", "url" : "http://detail.tmall.com/item.htm?id=10761519983"},
+                    { "name" : "爱启发", "url" : "http://detail.tmall.com/item.htm?id=9578071503"},
+                    { "name" : "爱丽丝", "url" : "http://detail.tmall.com/item.htm?id=9228339947"},
+                    { "name" : "奥丽芙", "url" : "http://detail.tmall.com/item.htm?id=9228415365"},
+                    { "name" : "戴安娜", "url" : "http://detail.tmall.com/item.htm?id=9228350235"},
+                    { "name" : "茱莉亚", "url" : "http://detail.tmall.com/item.htm?id=9228359419"},
+                    { "name" : "苏菲亚", "url" : "http://detail.tmall.com/item.htm?id=9228084275"},
+                    { "name" : "安菲", "url" : "http://detail.tmall.com/item.htm?id=9246090037"},
+                    { "name" : "妙斯", "url" : "http://detail.tmall.com/item.htm?id=9246396977"},
+                    { "name" : "爱斯尔", "url" : "http://detail.tmall.com/item.htm?id=9246048533"},
+                    { "name" : "维特丽", "url" : "http://detail.tmall.com/item.htm?id=9246024427"},
+                    { "name" : "凡特斯", "url" : "http://detail.tmall.com/item.htm?id=9245780275"},
+                    { "name" : "维特丽", "url" : "http://detail.tmall.com/item.htm?id=9246024427"},
+                    { "name" : "金雅兰1150", "url" : "http://detail.tmall.com/item.htm?id=9236249245"},
+                    { "name" : "金雅兰450", "url" : "http://detail.tmall.com/item.htm?id=9237339335"},
+                    { "name" : "金雅兰850", "url" : "http://detail.tmall.com/item.htm?id=9236816945"},
+                    { "name" : "金雅兰950", "url" : "http://detail.tmall.com/item.htm?id=9236702973"}
+                ]
+            }
+        ]
+    },
+    {
+        "brand_name" : "花为媒",
+        "site_url" : "http://www.huaweimei.com/",
+        "rank_keys" : [ "床垫", "家具", "家居" ],
+        "hot_keys" : [ "花为媒", "花为媒床垫", "花为媒床上用品" ],
+        "blogs" : "",
+        "mblogs" : [
+            { "type" : "sina", "uid" : "1922587610" }
+        ],
+        "stores" : [
+            {
+                "name" : "花为媒官方旗舰店",
+                "type" : "tmall",
+                "url" : "http://huaweimei.tmall.com/",
+                "products" : [
+                    { "name" : "玫瑰之约", "url" : "http://detail.tmall.com/item.htm?id=12256818900"},
+                    { "name" : "国色天香", "url" : "http://detail.tmall.com/item.htm?id=12258505618"},
+                    { "name" : "蔷薇香", "url" : "http://detail.tmall.com/item.htm?id=12319908659"},
+                    { "name" : "相思连", "url" : "http://detail.tmall.com/item.htm?id=12256810286"},
+                    { "name" : "情定百合", "url" : "http://detail.tmall.com/item.htm?id=12260101296"},
+                    { "name" : "南国竹", "url" : "http://detail.tmall.com/item.htm?id=12280435024"},
+                    { "name" : "玫瑰之约2", "url" : "http://detail.tmall.com/item.htm?id=12256818900"},
+                    { "name" : "国色天香1.2", "url" : "http://detail.tmall.com/item.htm?id=13396831212"},
+                    { "name" : "巴塞罗那", "url" : "http://detail.tmall.com/item.htm?id=12933317155"},
+                    { "name" : "布拉格", "url" : "http://detail.tmall.com/item.htm?id=13119699073"},
+                    { "name" : "布拉格2", "url" : "http://detail.tmall.com/item.htm?id=12258602244"},
+                    { "name" : "维也纳之歌", "url" : "http://detail.tmall.com/item.htm?id=12792572232"},
+                    { "name" : "维罗纳", "url" : "http://detail.tmall.com/item.htm?id=12258574508"},
+                    { "name" : "卡萨布兰卡", "url" : "http://detail.tmall.com/item.htm?id=12462752787"},
+                    { "name" : "依云小镇", "url" : "http://detail.tmall.com/item.htm?id=12280171307"},
+                    { "name" : "里约热恋", "url" : "http://detail.tmall.com/item.htm?id=12280111712"},
+                    { "name" : "爱琴海", "url" : "http://detail.tmall.com/item.htm?id=12258258550"},
+                    { "name" : "维也纳之歌2", "url" : "http://detail.tmall.com/item.htm?id=12259901807"},
+                    { "name" : "江南淡泊", "url" : "http://detail.tmall.com/item.htm?id=13100770380"},
+                    { "name" : "雅典", "url" : "http://detail.tmall.com/item.htm?id=12258330916"},
+                    { "name" : "巴塞罗那2", "url" : "http://detail.tmall.com/item.htm?id=12280511305"},
+                    { "name" : "江南淡泊2", "url" : "http://detail.tmall.com/item.htm?id=14282312543"},
+                    { "name" : "塔瓦卢阿", "url" : "http://detail.tmall.com/item.htm?id=12323048623"},
+                    { "name" : "江南雅风", "url" : "http://detail.tmall.com/item.htm?id=13208902508"},
+                    { "name" : "江南兰歌", "url" : "http://detail.tmall.com/item.htm?id=12279467908"},
+                    { "name" : "江南雅风2", "url" : "http://detail.tmall.com/item.htm?id=13952723153"},
+                    { "name" : "江南淡泊2", "url" : "http://detail.tmall.com/item.htm?id=12279207145"},
+                    { "name" : "江南春语", "url" : "http://detail.tmall.com/item.htm?id=13208518731"},
+                    { "name" : "江南春语2", "url" : "http://detail.tmall.com/item.htm?id=14535180683"},
+                    { "name" : "酷Q1", "url" : "http://detail.tmall.com/item.htm?id=12320452248"},
+                    { "name" : "酷Q2", "url" : "http://detail.tmall.com/item.htm?id=12278235437"}
+                ]
+            }
+        ]
+        
+    },
+        {
+        "brand_name" : "喜临门",
+        "site_url" : "http://www.chinabed.com/",
+        "rank_keys" : [ "床垫", "家具", "家居" ],
+        "hot_keys" : [ "喜临门", "喜临门床垫", "喜临门床上用品" ],
+        "blogs" : "",
+        "mblogs" : [
+            { "type" : "sina", "uid" : "1711499143" },
+            { "type" : "tqq", "uid" : "XLM87538193" }
+        ],
+        "stores" : [
+            {
+                "name" : "喜临门旗舰店",
+                "type" : "tmall",
+                "url" : "http://xilinmen.tmall.com/",
+                "products" : [
+                    { "name" : "尊悦E220", "url" : "http://detail.tmall.com/item.htm?id=9624912256"},
+                    { "name" : "舒眠", "url" : "http://detail.tmall.com/item.htm?id=4802079750"},
+                    { "name" : "栖燕", "url" : "http://detail.tmall.com/item.htm?id=8275660204"},
+                    { "name" : "尊铂E280", "url" : "http://detail.tmall.com/item.htm?id=9645092946"},
+                    { "name" : "尊雅E260", "url" : "http://detail.tmall.com/item.htm?id=9655037224"},
+                    { "name" : "双喜临门", "url" : "http://detail.tmall.com/item.htm?id=9654307130"},
+                    { "name" : "聚喜", "url" : "http://detail.tmall.com/item.htm?id=14664740850"},
+                    { "name" : "盟约+", "url" : "http://detail.tmall.com/item.htm?id=8824254120"},
+                    { "name" : "蒂莲RJ", "url" : "http://detail.tmall.com/item.htm?id=4774471362"},
+                    { "name" : "尊禧E260", "url" : "http://detail.tmall.com/item.htm?id=9645107902"},
+                    { "name" : "wr11-1520", "url" : "http://detail.tmall.com/item.htm?id=14194900328"},
+                    { "name" : "尊铂E300", "url" : "http://detail.tmall.com/item.htm?id=9654366608"},
+                    { "name" : "尊铂E290", "url" : "http://detail.tmall.com/item.htm?id=9661795600"},
+                    { "name" : "尊逸E180", "url" : "http://detail.tmall.com/item.htm?id=12989670063"},
+                    { "name" : "尊铂E300", "url" : "http://detail.tmall.com/item.htm?id=14829900103"},
+                    { "name" : "清风-1820", "url" : "http://detail.tmall.com/item.htm?id=13494971391"},
+                    { "name" : "清风-1520", "url" : "http://detail.tmall.com/item.htm?id=14198992628"}                    
+                ]
+            }
+        ]
+        
+    },
+        {
+        "brand_name" : "穗宝",
+        "site_url" : "http://www.suibao.com/",
+        "rank_keys" : [ "床垫", "家具", "家居" ],
+        "hot_keys" : [ "穗宝床垫", "穗宝床垫", "穗宝床上用品" ],
+        "blogs" : [
+            { "type" : "sina", "url" : "http://blog.sina.com.cn/suibaocd" }
+        ],
+        "mblogs" : [
+            { "type" : "sina", "uid" : "2266341064" }
+        ],
+        "stores" : [
+            {
+                "name" : "穗宝官方旗舰店",
+                "type" : "tmall",
+                "url" : "http://suibao.tmall.com/",
+                "products" : [
+                    { "name" : "贝妃", "url" : "http://detail.tmall.com/item.htm?id=8727529194"},
+                    { "name" : "琪纬迪", "url" : "http://detail.tmall.com/item.htm?id=9843076776"},
+                    { "name" : "南国之春", "url" : "http://detail.tmall.com/item.htm?id=5091882154"},
+                    { "name" : "汉堡", "url" : "http://detail.tmall.com/item.htm?id=5086002522"},
+                    { "name" : "派适", "url" : "http://detail.tmall.com/item.htm?id=12958552213"},
+                    { "name" : "南海椰歌10C", "url" : "http://detail.tmall.com/item.htm?id=5092172334"},
+                    { "name" : "南海椰歌5C", "url" : "http://detail.tmall.com/item.htm?id=5092205888"},
+                    { "name" : "米奥姬", "url" : "http://detail.tmall.com/item.htm?id=9840990150"},
+                    { "name" : "梦想号", "url" : "http://detail.tmall.com/item.htm?id=5091989420"},
+                    { "name" : "科隆", "url" : "http://detail.tmall.com/item.htm?id=5085597588"},
+                    { "name" : "1971", "url" : "http://detail.tmall.com/item.htm?id=13657603242"},
+                    { "name" : "时尚生活", "url" : "http://detail.tmall.com/item.htm?id=5085724620"},
+                    { "name" : "岸肯", "url" : "http://detail.tmall.com/item.htm?id=9842973632"},
+                    { "name" : "琪纬迪", "url" : "http://detail.tmall.com/item.htm?id=10971658914"},
+                    { "name" : "奥南", "url" : "http://detail.tmall.com/item.htm?id=13823216849"},
+                    { "name" : "嘉芬", "url" : "http://detail.tmall.com/item.htm?id=9400594800"},
+                    { "name" : "塞姗", "url" : "http://detail.tmall.com/item.htm?id=9840491574"},
+                    { "name" : "琪比", "url" : "http://detail.tmall.com/item.htm?id=9842113464"},
+                    { "name" : "珀丝", "url" : "http://detail.tmall.com/item.htm?id=12942595213"},
+                    { "name" : "瑰丹", "url" : "http://detail.tmall.com/item.htm?id=9839597280"},
+                    { "name" : "诺和", "url" : "http://detail.tmall.com/item.htm?id=10089260030"},
+                    { "name" : "方奏", "url" : "http://detail.tmall.com/item.htm?id=9842413000"},
+                    { "name" : "琪麦纳", "url" : "http://detail.tmall.com/item.htm?id=9842249018"},
+                    { "name" : "蒙高", "url" : "http://detail.tmall.com/item.htm?id=13823112156"},
+                    { "name" : "派适2", "url" : "http://detail.tmall.com/item.htm?id=13268588117"},
+                    { "name" : "曼络", "url" : "http://detail.tmall.com/item.htm?id=9842514842"},
+                    { "name" : "琪比2", "url" : "http://detail.tmall.com/item.htm?id=12984330920"},
+                    { "name" : "毕嘉利", "url" : "http://detail.tmall.com/item.htm?id=13703992003"},
+                    { "name" : "曼玛", "url" : "http://detail.tmall.com/item.htm?id=10971499328"},
+                    { "name" : "毕嘉利", "url" : "http://detail.tmall.com/item.htm?id=12983986250"}
+                ]
+            }
+        ]
+        
+    }
+]

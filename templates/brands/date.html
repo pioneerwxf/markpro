@@ -1,0 +1,115 @@
+{% extends "base.html" %}  
+<!-- Page Head -->
+{% block content %}
+		<h2>品牌监测-按日期索引</h2>
+			<p id="page-intro">显示某个品牌所有天的统计信息</p>
+						
+			<div class="clear"></div> <!-- End .clear -->
+			
+			<div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+					<h3>{{brand.brand_name}}</h3>
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+						<table>
+							
+							<thead>
+								<tr>
+									<td colspan="10">
+										<div class="bulk-actions align-left">
+											<form method = "post" name="select" action="#" >
+											 {% csrf_token %}
+											<select name="bid">
+												<option value="0">---请选择一个品牌---</option>
+											 {% for b in brands %}
+												<option value="{{b.id}}">{{b.brand_name}}</option>
+											 {% endfor %}
+											</select>
+											<input class="button" type="submit" value="选择" />
+											</form>
+											
+										</div>
+										<div style="float:right;">
+										 <a class="button" href="/media/download/brands_by_date.xls">导出当前数据</a>
+										</div>
+										<div class="clear"></div>
+									</td>
+								</tr>
+								<tr>
+								   <th>日期</th>
+								   <th>排名(谷/百)</th>
+								   <th>热度(谷/百)</th>
+								   <th>微博(粉/关/博)</th>
+								   <th>博客(等/粉/分/pv)</th>
+								   <th>网站排名</th>
+								</tr>
+								
+							</thead>
+							
+							<tfoot>
+								<tr>
+									<td colspan="10">
+										<div class="bulk-actions align-left">
+											<form method = "post" name="select" action="#" >
+											 {% csrf_token %}
+											<select name="bid">
+												<option value="0">---请选择一个品牌---</option>
+											 {% for b in brands %}
+												<option value="{{b.id}}">{{b.brand_name}}</option>
+											 {% endfor %}
+											</select>
+											<input class="button" type="submit" value="选择" />
+											</form>
+											
+										</div>
+										<div class="pagination">
+											<a href="?page=1" title="First Page">&laquo; 首页</a>
+											{% if results.has_previous %}
+											<a href="?page={{ datas.previous_page_number }}" title="Previous Page">&laquo; 前一页</a>
+											{% endif %}
+											{% for p in page_range %}
+												{% ifequal p datas.number %}<span> {{p}}</span>{% else %}
+												<a href="?page={{p}}" class="number" title="{{p}}">{{p}}</a>
+												{% endifequal %}
+											{% endfor %}
+											{% if datas.has_next %}
+											<a href="?page={{ datas.next_page_number }}" title="Next Page">&laquo; 后一页</a>
+											{% endif %}
+											<a href="?page={{ datas.paginator.num_pages }}" title="Last Page">尾页 &raquo;</a>
+										</div>
+										<div class="clear"></div>
+									</td>
+								</tr>
+							</tfoot>
+						 
+							
+						 
+							<tbody>
+								{% for data in datas.object_list%}
+								<tr>
+									<td>{{data.date|date:"Y-m-d"}}</td>
+									<td>{% for key, value in data.ranks.items %} {{key}}({{value.baidu_rank}}/{{ value.google_rank}})</br>{% endfor%}</td>
+									<td>{% for key, value in data.hots.items %} {{key}}({{value.baidu_hot}}/{{ value.google_hot}})</br>{% endfor%}</td>
+									<td>{% for key, value in data.mblogs.items %}{{key}}（{{value.followers}}/{{value.friends}}/{{value.statuses}}）{% endfor %}</td>
+									<td>{% for key, value in data.blogs.items %} {{key}}({{value.grade}}/{{ value.fans}}/{{ value.score}}/{{ value.pv}})</br>{% endfor%}</td>
+									<td>{% for value in data.rank %}{{ value }}{% endfor %}</td>
+								</tr>
+								{% endfor %}
+								
+							</tbody>
+							
+						</table>
+						
+					</div> <!-- End #tab1 -->
+				</div> <!-- End .content-box-content -->
+				
+			</div> <!-- End .content-box -->
+						
+{% endblock %}

@@ -1,0 +1,5 @@
+<form action="/upload" charset='utf-8' method="post">
+    {% csrf_token %}
+    <textarea name="brands" rows=20 cols=60></textarea><br />
+    <input type="submit" value="提交" />    
+</form>

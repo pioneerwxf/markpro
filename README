@@ -1,0 +1,32 @@
+MySQL
+=====
+
+mysql -u root -p
+DROP DATABASE markpro;
+CREATE USER 'markprodb'@'localhost' IDENTIFIED BY 'markpro';
+CREATE DATABASE markpro CHARSET=utf8;
+GRANT ALL ON markpro.* TO 'markprodb'@'localhost';
+quit
+
+after syncdb
+=====
+
+INSERT INTO `mblogs_token` (`id`, `type`, `token`)
+VALUES
+	(1, 'sina', '{\"access_token\": \"2.00pv9wvB0cz8rv76f2d2915cz5titC\", \"expires_in\": 86400, \"uid\": \"1772318225\"}'),
+	(2, 'tqq', '{\"oauth_token_secret\": \"32535b1ffb2d5469e970432c97cf05a1\", \"oauth_token\": \"602ae5df165d4700ad63f735428a5e79\", \"name\": \"aquarhead\"}');
+
+
+RabbitMQ
+=====
+sudo /usr/local/sbin/rabbitmq-server -detached
+sudo /usr/local/sbin/rabbitmqctl stop
+
+sudo /usr/local/sbin/rabbitmqctl add_user markpromq markpro
+sudo /usr/local/sbin/rabbitmqctl delete_vhost markpro
+sudo /usr/local/sbin/rabbitmqctl add_vhost markpro
+sudo /usr/local/sbin/rabbitmqctl set_permissions -p markpro markpromq ".*" ".*" ".*"
+
+sudo python manage.py celeryd -E -l info -c 5
+mysqldump -hlocalhost -uroot -ppaul_dirac213 markpro > /vagrant/mysql_data_bak/backupfile.sql
+site_url need to end with /

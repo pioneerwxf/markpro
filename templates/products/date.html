@@ -1,0 +1,133 @@
+{% extends "base.html" %}  
+<!-- Page Head -->
+{% block content %}
+			<!-- Page Head -->
+			<h2>产品监测-按日期索引</h2>
+			<p id="page-intro">显示所有天每个产品的信息</p>
+						
+			<div class="clear"></div> <!-- End .clear -->
+			
+			<div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+					<h3><a href="{{product.url}}" target="_blank">{{brand.brand_name}}-{{product.name}}</a></h3>
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+						
+						<table>
+							
+							<thead>
+								<tr>
+									<td colspan="10">
+										<div class="bulk-actions align-left">
+											<form method = "post" name="select" action="#" >
+											 {% csrf_token %}
+											 <select name="pid">
+											 {% for store in stores %}
+												<option value="0">--- 请选择产品 ---</option>
+												<option value="0">--- {{ store.name }} ---</option>
+												{% for product in store.product_s %}
+												<option value={{ product.id }}>{{ product.name }}</option>
+												{% endfor %}
+											 {% endfor %}
+											</select>
+											<input class="button" type="submit" value="选择" />
+											</form>
+										</div>
+										<div style="float:right;">
+										 <a class="button" href="/media/download/products_by_date.xls">导出当前数据</a>
+										</div>
+										<!--<div class="pagination">
+											<a href="#" title="First Page">&laquo; 首页</a><a href="#" title="Previous Page">&laquo; 前一页</a>
+											<a href="#" class="number" title="1">1</a>
+											<a href="#" class="number" title="2">2</a>
+											<a href="#" class="number current" title="3">3</a>
+											<a href="#" class="number" title="4">4</a>
+											<a href="#" title="Next Page">后一页 &raquo;</a><a href="#" title="Last Page">尾页 &raquo;</a>
+										</div>-->
+										<div class="clear"></div>
+									</td>
+								</tr>
+								<tr>
+								   
+								   <th><a href="?order=update_time&revs={{ revs }}" title="按日期排序">日期</a></th>
+								   <th>总访问量</th>
+								   <th><a href="?order=total&revs={{ revs }}" title="按累计销量排序">累计销量</a></th>
+								   <th><a href="?order=month&revs={{ revs }}" title="按月销量排序">月销量</a></th>
+								   <th>累计销售额/元</th>
+								   <th>月销售额/元</th>
+								   <th>转化率%</th>
+								   <th><a href="?order=review&revs={{ revs }}" title="按评价排序">评价</a></th>
+								</tr>
+								
+							</thead>
+						 
+							<tfoot>
+								<tr>
+									<td colspan="10">
+										<div class="bulk-actions align-left">
+											<form method = "post" name="select" action="#" >
+											 {% csrf_token %}
+											 <select name="pid">
+											 {% for store in stores %}
+												<option value="0">--- 请选择产品 ---</option>
+							
+												<option value="0">--- {{ store.name }} ---</option>
+												{% for product in store.product_s %}
+												<option value={{ product.id }}>{{ product.name }}</option>
+												{% endfor %}
+											 {% endfor %}
+											</select>
+											<input class="button" type="submit" value="选择" />
+											</form>
+										</div>
+										<div class="pagination">
+											<a href="?page=1" title="First Page">&laquo; 首页</a>
+											{% if results.has_previous %}
+											<a href="?page={{ results.previous_page_number }}" title="Previous Page">&laquo; 前一页</a>
+											{% endif %}
+											{% for p in page_range %}
+												{% ifequal p results.number %}<span> {{p}}</span>{% else %}
+												<a href="?page={{p}}" class="number" title="{{p}}">{{p}}</a>
+												{% endifequal %}
+											{% endfor %}
+											{% if results.has_next %}
+											<a href="?page={{ results.next_page_number }}" title="Next Page">&laquo; 后一页</a>
+											{% endif %}
+											<a href="?page={{results.paginator.num_pages}}" title="Last Page">尾页 &raquo;</a>
+										</div>
+										<div class="clear"></div>
+									</td>
+								</tr>
+							</tfoot>
+							
+						 
+							<tbody>
+							 {% for result in results.object_list %}
+								<tr>
+									<td>{{result.update_time|date:"Y-m-d"}}</td>
+									<td>0</td>
+									<td>{{result.total}}</td>
+									<td>{{result.month}}</td>
+									<td>0</td>
+									<td>0</td>
+									<td>10%</td>
+									<td>{{result.review}}</td>
+								</tr>
+							 {% endfor %}
+							
+							</tbody>
+							
+						</table>
+						
+					</div> <!-- End #tab1 -->
+				</div> <!-- End .content-box-content -->
+				
+			</div> <!-- End .content-box -->
+{% endblock %}
