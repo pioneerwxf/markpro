@@ -71,7 +71,7 @@
 										</div>
 										<div class="pagination">
 											<a href="?page=1" title="First Page">&laquo; 首页</a>
-											{% if results.has_previous %}
+											{% if datas.has_previous %}
 											<a href="?page={{ datas.previous_page_number }}" title="Previous Page">&laquo; 前一页</a>
 											{% endif %}
 											{% for p in page_range %}

@@ -197,7 +197,7 @@ def brand_by_date(request):
     exist_date = []
     
     for rk in brand.rank_keys.all():
-        for r in rk.results.all():
+        for r in rk.results.all().order_by('-update_time'):
             if r.update_time.date() in exist_date:
                 datas[exist_date.index(r.update_time.date())]["ranks"][ r.rankkey.keyword ] = r.result
             else:
@@ -227,7 +227,7 @@ def brand_by_date(request):
     
     for r in brand.results.all():
         datas[exist_date.index(r.update_time.date())]["rank"] = r.result['pop_rank']
-    datas.sort()
+    #datas.sort(key = lambda p: p., reverse=False) 
     paginator=Paginator(datas,2)
     data_list = paginator.page(page)
     page_range=paginator.page_range
