@@ -241,13 +241,15 @@ def brand_by_date(request):
         s.write(0, col, t)
     for row, data in enumerate(datas):
         s.write(row+1, 0, data["date"].strftime("%Y-%m-%d"))
+        
         str = ''
         for k,v in data["ranks"].items():
             str += '%s(%s/%s)\n' % (k, v["google_rank"], v["baidu_rank"])
         s.write(row+1, 1, str)
+        if "hots" in data.keys():    
         str = ''
-        for k,v in data["hots"].items():
-            str += '%s(%s/%s)\n' % (k, v["google_hot"], v["baidu_hot"])
+            for k,v in data["hots"].items():
+                 str += '%s(%s/%s)\n' % (k, v["google_hot"], v["baidu_hot"])
         s.write(row+1, 2, str)
         if "mblogs" in data.keys():
             str = ''

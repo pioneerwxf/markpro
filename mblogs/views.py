@@ -40,7 +40,7 @@ def weibo_refresh(request): #simulate the brower to login
     br.open(red_url)  
     br.select_form(name="authZForm")
     br["userId"]="pioneerwxf@gmail.com"
-    br["passwd"]="langman326227"
+    br["passwd"]="dabao326327"
     print br.submit().read()  
 
 # unused right now
